@@ -1,5 +1,6 @@
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
+import { useSession } from 'next-auth/react';
 
 export default function AcmeLogo() {
   return (
