@@ -16,3 +16,17 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+.test .parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.test  .div1 { grid-area: 1 / 1 / 2 / 6; }
+.test  .div2 { grid-area: 3 / 1 / 6 / 2; }
+.test  .div3 { grid-area: 2 / 2 / 3 / 6; }
+.test  .div4 { grid-area: 3 / 2 / 6 / 6; }

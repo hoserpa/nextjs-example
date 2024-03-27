@@ -12,14 +12,7 @@ export const metadata: Metadata = {
   title: 'Invoices',
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string;
-    page?: string;
-  };
-}) {
+export default async function Page({searchParams}: { searchParams?: { query?: string; page?: string; }}) {
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
 
