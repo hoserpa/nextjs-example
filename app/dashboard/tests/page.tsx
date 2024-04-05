@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { lusitana } from '@/app/ui/fonts';
+import { PlusCircleIcon } from '@heroicons/react/24/outline';
+import { menu1 } from '@/app/dashboard/tests/menu.json';
 
 export default function Page(){
   let [count, setCount] = useState(0);
@@ -25,23 +27,39 @@ export default function Page(){
       </button>
       <div className='parent pt-4'>
         <div className='div1 bg-cyan-500'>1</div>
-        <div className='div2 bg-gray-500'>2</div>
-        <div className='div3 bg-red-500'>
-          <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm">
+        
+        <div className='div2 bg-gray-500 justify-self-end'>
+          <span className="inline-flex flex-col overflow-hidden rounded-md borde shadow-sm">
+            {menu1?.map((item) => (
+              <button
+                key={item.id}
+                className="inline-block px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:relative my-2"
+              >
+                {item.label}
+              </button>
+            ))}
             <button
-              className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative"
+              className="inline-block px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:relative my-2"
             >
-              Edit
+              <PlusCircleIcon className="h-6 w-6 inline"/>
             </button>
+          </span>
+        </div>
+
+        <div className='div3 bg-red-500 self-end'>
+          <span className="inline-flex overflow-hidden rounded-md borde shadow-sm">
+            {menu1?.map((item) => (
+              <button
+                key={item.id}
+                className="inline-block px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:relative mx-2"
+              >
+                {item.label}
+              </button>
+            ))}
             <button
-              className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative"
+              className="inline-block px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:relative mx-2"
             >
-              View
-            </button>
-            <button
-              className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative"
-            >
-              Delete
+              <PlusCircleIcon className="h-6 w-6 inline"/>
             </button>
           </span>
         </div>
